@@ -22,6 +22,10 @@ Opens a dark-themed page at http://localhost:5173: drop the CSV, fill in the emp
 
 Every workday must have hours, a leave day or an explicit 0: workdays without tracked time are listed in a red alert where each is marked Szabadság, Betegszabadság or 0 óra, and the PDF cannot be downloaded until none are left. In the preview, open days are red, leave days blue and 0-hour days violet. `pnpm web:build` produces a static site in `apps/web/dist`.
 
+### Deploy to GitHub Pages
+
+`.github/workflows/pages.yml` runs the tests and the type check, builds the site and publishes it on every push to `main` (or by hand from the Actions tab). One-time setup: in the GitHub repository, open **Settings → Pages** and set **Source** to **GitHub Actions**. The site is then at `https://<username>.github.io/<repo>/`. CI has no `employer.json`, so the public site carries no employer data; import your `employer.json` once on the page.
+
 ## Command line
 
 ```bash
