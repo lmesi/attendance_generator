@@ -13,6 +13,8 @@ const requireFromCore = createRequire(new URL("../../packages/core/package.json"
 const csvParseBrowser = requireFromCore.resolve("csv-parse/browser/esm/sync");
 
 export default defineConfig({
+  // Relative asset URLs: the build works from any sub-path (e.g. a GitHub Pages project site).
+  base: "./",
   plugins: [react(), tailwindcss()],
   // The dev pre-bundler would resolve csv-parse/sync to its Node entry, ignoring the alias below.
   optimizeDeps: { exclude: ["csv-parse"] },
