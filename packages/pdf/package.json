@@ -1,0 +1,18 @@
+{
+  "name": "@attendance/pdf",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./node": "./src/node.ts",
+    "./fonts/*": "./fonts/*"
+  },
+  "dependencies": {
+    "@attendance/core": "workspace:*",
+    "pdfkit": "^0.17.2"
+  },
+  "devDependencies": {
+    "@types/pdfkit": "^0.17.7"
+  }
+}

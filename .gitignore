@@ -1,0 +1,7 @@
+node_modules/
+*.pdf
+!fixtures/*.pdf
+dist/
+
+# Real employer data stays local; copy employer.example.json to start.
+employer.json

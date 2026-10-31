@@ -1,0 +1,22 @@
+{
+  "name": "attendance-generator",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "attendance": "tsx apps/cli/src/main.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p . && tsc --noEmit -p apps/web",
+    "web": "pnpm --filter @attendance/web dev",
+    "web:build": "pnpm --filter @attendance/web build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9.3",
+    "vitest": "^3.2.7"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "year": 2026,
+  "source": "10/2025. (IV. 30.) NGM rendelet, as reported by Infostart and Pénzcentrum; the decree text itself has not been checked yet",
+  "note": "A bill submitted in September 2026 would make December 24 a public holiday, which could cancel the December 12 working Saturday. Re-check December before release.",
+  "restDays": ["2026-01-02", "2026-08-21", "2026-12-24"],
+  "workingSaturdays": ["2026-01-10", "2026-08-08", "2026-12-12"]
+}

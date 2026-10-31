@@ -1,0 +1,16 @@
+{
+  "name": "@attendance/cli",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "attendance": "./src/main.ts"
+  },
+  "dependencies": {
+    "@attendance/calendar-hu": "workspace:*",
+    "@attendance/core": "workspace:*",
+    "@attendance/pdf": "workspace:*",
+    "commander": "^14.0.3",
+    "zod": "^4.6.7"
+  }
+}

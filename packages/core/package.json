@@ -1,0 +1,13 @@
+{
+  "name": "@attendance/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@attendance/calendar-hu": "workspace:*",
+    "csv-parse": "^6.2.1"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "employer": {
+    "name": "Minta Kft.",
+    "seat": "1234 Mintaváros, Példa utca 1.",
+    "taxNumber": "12345678-1-23",
+    "registrationNumber": "01-09-123456",
+    "city": "Mintaváros"
+  },
+  "defaults": { "baseHours": 40, "arrival": "09:00", "weekendPolicy": "redistribute" }
+}
