@@ -33,7 +33,6 @@ export async function run(argv: string[], io: Io): Promise<number> {
     .option("--out <file>", "output PDF (default: Jelenleti_iv_<Name>_<YYYY>_<MM>.pdf)")
     .option("--arrival <H:MM>", "arrival time on worked days (default: 9:00)")
     .option("--weekend-policy <policy>", `hours on non-working days: ${WEEKEND_POLICIES.join(" | ")} (default: redistribute)`)
-    .option("--place <city>", "place in the 'Kelt:' line (default: employer city)")
     .option(
       "--start-date <YYYY-MM-DD>",
       "employment start within the month: divide all hours over the workdays from this date on",

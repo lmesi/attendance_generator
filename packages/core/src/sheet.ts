@@ -51,8 +51,6 @@ export interface BuildOptions {
   arrival?: string;
   /** Default "redistribute". */
   weekendPolicy?: WeekendPolicy;
-  /** Place in the "Kelt:" line; default employer.city. */
-  place?: string;
   /**
    * Employment start within the month. When set, all hours tracked in the month are
    * divided over the workdays from this date to the end of the month in proportion to
@@ -113,7 +111,6 @@ export interface AttendanceSheet {
   month: number;
   /** "2026. október" */
   period: string;
-  place: string;
   days: SheetDay[];
   totals: {
     seconds: number;
@@ -332,7 +329,6 @@ export function buildAttendanceSheet(options: BuildOptions): AttendanceSheet {
     year,
     month,
     period: `${year}. ${HU_MONTHS[month - 1]}`,
-    place: options.place?.trim() || options.employer.city,
     days: sheetDays,
     totals: {
       seconds: totalSeconds,

@@ -66,8 +66,7 @@ export function renderAttendancePdf(sheet: AttendanceSheet, fonts: PdfFonts): Pr
   let y = drawHeader(doc, sheet, 40);
   y = drawTable(doc, sheet, y + 14);
   y = drawNotes(doc, sheet, y + 6);
-  y = drawTotals(doc, sheet, y + 8);
-  drawSignatures(doc, sheet, Math.max(y + 22, 0));
+  drawTotals(doc, sheet, y + 8);
 
   doc.end();
   return done;
@@ -185,23 +184,6 @@ function drawTotals(doc: Doc, sheet: AttendanceSheet, top: number): number {
     y += 15;
   });
   return y;
-}
-
-function drawSignatures(doc: Doc, sheet: AttendanceSheet, top: number): void {
-  doc.fillColor("black").font("regular").fontSize(10);
-  text(doc, `Kelt: ${sheet.place}, ${sheet.year}. ____________________`, LEFT, top);
-
-  const lineY = Math.min(top + 52, PAGE.height - 48);
-  const lineWidth = 200;
-  const signers = [
-    { x: LEFT, label: "Munkavállaló aláírása" },
-    { x: RIGHT - lineWidth, label: "Munkáltató / képviselő aláírása" },
-  ];
-  doc.strokeColor("black").lineWidth(0.7);
-  for (const { x } of signers) doc.moveTo(x, lineY).lineTo(x + lineWidth, lineY);
-  doc.stroke();
-  doc.fontSize(9);
-  for (const { x, label } of signers) text(doc, label, x, lineY + 5, { width: lineWidth, align: "center" });
 }
 
 function concat(chunks: Uint8Array[]): Uint8Array {

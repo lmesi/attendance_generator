@@ -47,7 +47,6 @@ pnpm attendance generate \
 | `--out <file>` | `Jelenleti_iv_<Name>_<YYYY>_<MM>.pdf` | |
 | `--arrival <H:MM>` | `9:00` | Leaving time = arrival + hours worked |
 | `--weekend-policy <p>` | `redistribute` | `redistribute`, `keep` or `reject` hours tracked on non-working days |
-| `--place <city>` | employer city | Place in the "Kelt:" line |
 | `--start-date <YYYY-MM-DD>` | none | Employment started within the month (see below) |
 | `--max-daily-hours <hours>` | `8` | Daily cap with `--start-date` |
 

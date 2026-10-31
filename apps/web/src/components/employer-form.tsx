@@ -53,8 +53,6 @@ export function EmployerForm({ settings, onChange }: { settings: Settings; onCha
                 <dd className="truncate">{employer[key]}</dd>
               </div>
             ))}
-            <dt className="text-muted-foreground">Place of signing</dt>
-            <dd className="truncate">{settings.place || employer.city}</dd>
           </dl>
         )}
         {editing && (
@@ -68,14 +66,11 @@ export function EmployerForm({ settings, onChange }: { settings: Settings; onCha
                 />
               </Field>
             ))}
-            <Field id="place" label="Place of signing" hint="The “Kelt:” line; empty means the employer’s city.">
-              <Input id="place" value={settings.place} placeholder={employer.city} onChange={(e) => onChange({ ...settings, place: e.target.value })} />
-            </Field>
             <div className="flex flex-wrap gap-2">
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => onChange({ ...settings, employer: DEFAULT_SETTINGS.employer, place: DEFAULT_SETTINGS.place })}
+                onClick={() => onChange({ ...settings, employer: DEFAULT_SETTINGS.employer })}
               >
                 <RotateCcw /> Reset to default
               </Button>

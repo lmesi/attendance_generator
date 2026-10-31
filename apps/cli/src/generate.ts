@@ -24,7 +24,6 @@ export interface GenerateFlags {
   out?: string;
   arrival?: string;
   weekendPolicy?: string;
-  place?: string;
   startDate?: string;
   maxDailyHours?: string;
 }
@@ -60,7 +59,6 @@ export async function generate(flags: GenerateFlags, cwd: string): Promise<Gener
     zeroDays: (flags.zeroDay ?? []).flatMap((spec) => spec.split(",")).map((date) => date.trim()),
     arrival: flags.arrival ?? defaults.arrival,
     weekendPolicy: (flags.weekendPolicy ?? defaults.weekendPolicy) as WeekendPolicy | undefined,
-    place: flags.place ?? defaults.place,
     startDate: flags.startDate,
     maxDailyHours:
       flags.maxDailyHours !== undefined ? parseHours(flags.maxDailyHours, "--max-daily-hours") : defaults.maxDailyHours,

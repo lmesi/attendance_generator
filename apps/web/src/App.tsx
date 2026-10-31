@@ -66,7 +66,6 @@ export function App() {
         zeroDays,
         arrival: settings.arrival,
         weekendPolicy: settings.weekendPolicy,
-        place: settings.place,
         ...(startEnabled ? { startDate, maxDailyHours: toNumber(settings.maxDailyHours) ?? Number.NaN } : {}),
       });
       return { sheet };

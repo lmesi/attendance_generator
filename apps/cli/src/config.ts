@@ -21,7 +21,6 @@ export const ConfigSchema = z
         baseHours: z.number().nonnegative().optional(),
         arrival: z.string().optional(),
         weekendPolicy: z.enum(WEEKEND_POLICIES as [string, ...string[]]).optional(),
-        place: z.string().optional(),
         maxDailyHours: z.number().positive().optional(),
       })
       .strict()

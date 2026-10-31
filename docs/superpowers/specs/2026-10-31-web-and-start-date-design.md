@@ -42,3 +42,7 @@
 
 - Leave days and 0-hour days before the start date are ignored instead of rejected; those days are blank on the sheet anyway.
 - The split is no longer even: each workday from the start date weighs what Toggl tracked on it, a day with nothing tracked weighs as the average tracked day, and a day whose share would pass the daily cap gets the cap while its excess is shared among the others (`splitProportionally`, whole seconds, largest remainder). When the hours do not fit, every day gets the cap and the leftover is reported, as before.
+
+## Follow-up: no signature block
+
+- The "Kelt:" line and the two signature lines under the totals were removed from the PDF on request; the daily signature column stays. The place option (`--place`, `defaults.place`, the web field) only fed the "Kelt:" line, so it was removed too.

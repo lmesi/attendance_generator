@@ -9,7 +9,6 @@ const EMPLOYER_KEYS = ["name", "seat", "taxNumber", "registrationNumber", "city"
 /** What the browser remembers between visits. The CSV itself is never stored. */
 export interface Settings {
   employer: Employer;
-  place: string;
   employee: string;
   baseHours: string;
   arrival: string;
@@ -19,7 +18,6 @@ export interface Settings {
 
 const EMPTY_SETTINGS: Settings = {
   employer: { name: "", seat: "", taxNumber: "", registrationNumber: "", city: "" },
-  place: "",
   employee: "",
   baseHours: "40",
   arrival: "09:00",
@@ -64,7 +62,6 @@ export function toConfigJson(settings: Settings): string {
     weekendPolicy: settings.weekendPolicy,
     maxDailyHours: toNumber(settings.maxDailyHours) ?? 8,
   };
-  if (settings.place.trim()) defaults.place = settings.place.trim();
   return `${JSON.stringify({ employer: settings.employer, defaults }, null, 2)}\n`;
 }
 
@@ -84,7 +81,6 @@ export function fromConfigJson(text: string, current: Settings): Settings {
   return {
     ...current,
     employer: Object.fromEntries(EMPLOYER_KEYS.map((key) => [key, employer[key] as string])) as unknown as Employer,
-    place: typeof d.place === "string" ? d.place : current.place,
     baseHours: typeof d.baseHours === "number" ? String(d.baseHours) : current.baseHours,
     arrival: typeof d.arrival === "string" ? d.arrival.padStart(5, "0") : current.arrival,
     weekendPolicy: WEEKEND_POLICIES.includes(d.weekendPolicy as WeekendPolicy)
